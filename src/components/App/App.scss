@@ -1,0 +1,85 @@
+@import '../../style/constants';
+
+body {
+  margin: 0;
+}
+
+.main {
+  display: flex;
+  height: 100vh;
+}
+
+.smilies {
+  margin-top: 4.4rem;
+}
+
+.left-container {
+  background-color: $white;
+  width: 100%;
+  text-align: center;
+}
+
+.left-container__menu {
+  text-align: left;
+  padding-top: 2rem;
+  padding-left: 2rem;
+}
+
+@font-face {
+  font-family: Open Sans Bold;
+  src: url('../../assets/fonts/OpenSans-Bold.ttf');
+}
+
+@font-face {
+  font-family: Open Sans Regular;
+  src: url('../../assets/fonts/OpenSans-Regular.ttf');
+}
+
+.left-container__title {
+  font-family: Open Sans Bold;
+  font-weight: bold;
+  font-size: 1.25rem;
+  line-height: 1.4rem;
+  letter-spacing: 0.3rem;
+  color: $black;
+  margin-top: 1rem;
+  margin-bottom: 0.8rem;
+}
+
+.left-container__subtitle {
+  font-family: Open Sans Bold;
+  font-size: 1.12rem;
+  line-height: 2rem;
+}
+
+.left-container__description {
+  font-family: Open Sans Regular;
+  font-size: 0.87rem;
+  line-height: 2rem;
+  width: 20rem;
+  margin: auto;
+}
+
+.right-container {
+  background-color: $light-blue;
+  width: 100%;
+  text-align: center;
+}
+
+.right-container__mobile-preview {
+  margin-top: 1.7rem;
+  max-height: 75%;
+}
+
+.right-container__appstore {
+  display: block;
+  margin: auto;
+}
+
+.right-container__socials {
+  margin-top: 2rem;
+}
+
+.right-container__socials__facebook {
+  margin-right: 2rem;
+}
