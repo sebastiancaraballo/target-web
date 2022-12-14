@@ -6,7 +6,7 @@ type ButtonProps = {
 };
 
 const Button: FC<ButtonProps> = ({ label }) => (
-  <button type="submit">{label}</button>
+  <button className="button" type="submit">{label}</button>
 );
 
-export default Button;
+export { Button };

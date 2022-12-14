@@ -1,0 +1,32 @@
+@import '../../styles/constants';
+
+.signup {
+  text-transform: uppercase;
+  margin-top: 6.75rem;
+}
+
+.confirmation__first_title {
+  font-weight: 400;
+  font-size: 1.25rem;
+  line-height: 1.4rem;
+  color: $black;
+  margin-top: 1rem;
+  margin-bottom: 0.8rem;
+}
+
+.confirmation__second_title {
+  margin-top: 0.81rem;
+  margin-bottom: 2rem;
+  letter-spacing: 0.2rem;
+}
+
+.confirmation__subtitle {
+  font-size: 1.125rem;
+  line-height: 2rem;
+}
+
+.confirmation__description {
+  font-size: 0.875rem;
+  line-height: 2rem;
+  margin: 0;
+}

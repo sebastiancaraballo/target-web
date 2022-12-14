@@ -2,8 +2,7 @@ import { useForm } from "react-hook-form";
 import { ErrorMessage } from "@hookform/error-message";
 import { useDispatch } from "react-redux";
 import { Navigate } from "react-router-dom";
-import Input from "@common/Input"
-import Button from "@common/Button"
+import { Input, Button } from "@components/common"
 import { setCredentials, useAuth } from "../../../store/auth.reducer";
 import { usePostSignInMutation } from "@services/targetApi";
 
@@ -49,6 +48,7 @@ function SignInForm() {
           register={register}
           error={!isValid}
           onChange={() => clearErrors()}
+          name="email"
         />
         <Input
           label="password"
@@ -56,6 +56,7 @@ function SignInForm() {
           register={register}
           error={!isValid}
           onChange={() => clearErrors()}
+          name="password"
         />
         <Button label="sign in" />
         <div className="errorMessage">

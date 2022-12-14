@@ -1,0 +1,25 @@
+@import '../../styles/constants';
+
+.container {
+  background-color: $light-blue;
+  width: 100%;
+  text-align: center;
+}
+
+.mobile-preview {
+  margin-top: 1.7rem;
+  max-height: 75%;
+}
+
+.appstore {
+  display: block;
+  margin: auto;
+}
+
+.socials {
+  margin-top: 2rem;
+}
+
+.socials-facebook {
+  margin-right: 2rem;
+}
