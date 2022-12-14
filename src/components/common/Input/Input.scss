@@ -1,0 +1,25 @@
+@import '../../../style/constants';
+
+label {
+  display: block;
+  font-size: 0.7rem;
+  line-height: 1.3rem;
+  text-align: center;
+  letter-spacing: 0.165rem;
+  text-transform: uppercase;
+  font-weight: 600;
+}
+
+input {
+  display: block;
+  width: 10.8rem;
+  height: 2.3rem;
+  margin: auto;
+  margin-top: 0.25rem;
+  padding-left: 0.5rem;
+  padding-right: 0.5rem;
+}
+
+.error {
+  border-color: $red;
+}

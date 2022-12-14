@@ -60,6 +60,14 @@ body {
   margin: auto;
 }
 
+.label__email {
+  margin-top: 3.12rem;
+}
+
+.label__password {
+  margin-top: 1.5rem;
+}
+
 .right-container {
   background-color: $light-blue;
   width: 100%;
@@ -82,4 +90,10 @@ body {
 
 .right-container__socials__facebook {
   margin-right: 2rem;
+}
+
+.errorMessage {
+  color: $red;
+  font-size: 0.75rem;
+  margin-top: 1.4rem;
 }
