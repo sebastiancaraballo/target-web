@@ -19,9 +19,15 @@ export const targetApi = createApi({
         };
       },
     }),
+    postSignUp: builder.mutation({
+      query: (body) => {
+        return { url: "/users", method: "POST", body }
+      }
+    })
   }),
 });
 
 export const {
   usePostSignInMutation,
+  usePostSignUpMutation
 } = targetApi;

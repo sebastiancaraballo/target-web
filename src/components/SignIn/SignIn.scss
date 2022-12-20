@@ -1,8 +1,4 @@
-@import '../../style/constants';
-
-body {
-  margin: 0;
-}
+@import '../../styles/constants';
 
 .main {
   display: flex;
@@ -25,19 +21,8 @@ body {
   padding-left: 2rem;
 }
 
-@font-face {
-  font-family: Open Sans Bold;
-  src: url('../../assets/fonts/OpenSans-Bold.ttf');
-}
-
-@font-face {
-  font-family: Open Sans Regular;
-  src: url('../../assets/fonts/OpenSans-Regular.ttf');
-}
-
 .left-container__title {
-  font-family: Open Sans Bold;
-  font-weight: bold;
+  font-weight: 800;
   font-size: 1.25rem;
   line-height: 1.4rem;
   letter-spacing: 0.3rem;
@@ -47,53 +32,39 @@ body {
 }
 
 .left-container__subtitle {
-  font-family: Open Sans Bold;
   font-size: 1.12rem;
+  font-weight: 600;
   line-height: 2rem;
 }
 
 .left-container__description {
-  font-family: Open Sans Regular;
   font-size: 0.87rem;
   line-height: 2rem;
   width: 20rem;
   margin: auto;
 }
 
-.label__email {
-  margin-top: 3.12rem;
-}
-
-.label__password {
-  margin-top: 1.5rem;
-}
-
-.right-container {
-  background-color: $light-blue;
-  width: 100%;
+.left-container__link {
+  font-size: 0.7rem;
+  line-height: 1.3rem;
   text-align: center;
-}
-
-.right-container__mobile-preview {
-  margin-top: 1.7rem;
-  max-height: 75%;
-}
-
-.right-container__appstore {
-  display: block;
-  margin: auto;
-}
-
-.right-container__socials {
-  margin-top: 2rem;
-}
-
-.right-container__socials__facebook {
-  margin-right: 2rem;
-}
+  letter-spacing: 0.165rem;
+  text-transform: uppercase;
+  font-weight: 600;
+  text-decoration: none;
+  color: inherit;
+ }
 
 .errorMessage {
   color: $red;
   font-size: 0.75rem;
   margin-top: 1.4rem;
+}
+
+hr {
+  width: 7.6rem;
+}
+
+.sign-in-container {
+  margin-top: 3.125rem;
 }

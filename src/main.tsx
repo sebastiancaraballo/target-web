@@ -5,13 +5,12 @@ import {
   Route,
 } from "react-router-dom";
 import ReactDOM from 'react-dom/client'
-import SignIn from './components/SignIn'
-import Home from './components/Home'
-import './index.scss'
 import { Provider } from "react-redux";
-import { setupStore } from "./store";
 import { persistStore } from "redux-persist";
 import { PersistGate } from "redux-persist/integration/react";
+import { setupStore } from "./store";
+import './index.scss'
+import { SignIn, Home, SignUp } from '@components/index';
 
 const store = setupStore();
 const persistor = persistStore(store);
@@ -25,6 +24,10 @@ const router = createBrowserRouter([
     path: "/home",
     element: <Home />,
   },
+  {
+    path: "/signup",
+    element: <SignUp />
+  }
 ]);
 
 ReactDOM.createRoot(document.getElementById('root') as HTMLElement).render(
