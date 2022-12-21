@@ -1,8 +1,8 @@
-import "./WelcomeRightContainer.scss"
 import mobilePreview from "@assets/images/i6.png"
 import appstore from "@assets/images/appstore.png"
 import facebook from "@assets/images/Facebook.png"
 import twitter from "@assets/images/Twitter.png"
+import "./WelcomeRightContainer.scss"
 
 function WelcomeRightContainer() {
   return (
