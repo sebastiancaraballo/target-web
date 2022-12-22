@@ -1,6 +1,6 @@
-import classNames from "classnames";
-import React, { FC } from "react";
+import { FC } from "react";
 import { UseFormRegister, FieldValues } from "react-hook-form";
+import classNames from "classnames";
 import "./Select.scss";
 
 type SelectProps = {

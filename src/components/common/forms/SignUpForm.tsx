@@ -4,8 +4,8 @@ import { ErrorMessage } from "@hookform/error-message";
 import { useState } from "react";
 import { Link } from "react-router-dom"
 import { Input, Button, Select } from "@components/common";
-import smilies from "@assets/images/smilies.png"
 import { usePostSignUpMutation } from "@services/targetApi";
+import smilies from "@assets/images/smilies.png";
 
 function SignUpForm() {
   const {

@@ -1,7 +1,7 @@
-import React, { FC } from "react";
-import "./Input.scss";
-import { UseFormRegister, FieldValues, ValidationRule } from "react-hook-form";
+import { FC } from "react";
+import { UseFormRegister, FieldValues } from "react-hook-form";
 import classNames from "classnames";
+import "./Input.scss";
 
 type InputProps = {
   label: string;

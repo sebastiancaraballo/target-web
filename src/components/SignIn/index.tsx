@@ -1,9 +1,9 @@
-import "./SignIn.scss"
+import { Link } from "react-router-dom"
+import SignInForm from "@components/common/forms/SignInForm"
+import WelcomeRightContainer from "@components/WelcomeRightContainer"
 import smilies from "@assets/images/smilies.png"
 import menu from "@assets/images/menu.png"
-import SignInForm from "@components/common/forms/SignInForm"
-import { Link } from "react-router-dom"
-import WelcomeRightContainer from "@components/WelcomeRightContainer"
+import "./SignIn.scss"
 
 function SignIn() {
   return (

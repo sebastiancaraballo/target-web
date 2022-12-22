@@ -1,7 +1,7 @@
-import "./SignUp.scss"
-import menu from "@assets/images/menu.png"
 import SignUpForm from "@components/common/forms/SignUpForm"
 import WelcomeRightContainer from "@components/WelcomeRightContainer"
+import menu from "@assets/images/menu.png"
+import "./SignUp.scss"
 
 function SignUp() {
   return (
