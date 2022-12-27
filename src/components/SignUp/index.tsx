@@ -1,3 +1,4 @@
+import React from "react";
 import SignUpForm from "@components/common/forms/SignUpForm"
 import WelcomeRightContainer from "@components/WelcomeRightContainer"
 import menu from "@assets/images/menu.png"

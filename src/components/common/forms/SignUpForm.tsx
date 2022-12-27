@@ -1,22 +1,30 @@
+import React from "react";
 import { useForm } from "react-hook-form";
-import { useNavigate } from "react-router-dom";
 import { ErrorMessage } from "@hookform/error-message";
 import { useState } from "react";
-import { Link } from "react-router-dom"
+import { Link } from "react-router-dom";
+import {IntlProvider, FormattedMessage} from 'react-intl';
 import { Input, Button, Select } from "@components/common";
 import { usePostSignUpMutation } from "@services/targetApi";
 import smilies from "@assets/images/smilies.png";
+
+const messages = {
+  confirmationFirstTitle: "Yey!",
+  confirmationSubtitle: "Only one more step to start enjoying",
+  confirmationTarget: "TARGET",
+  confirmationDescription: "We've sent an email to confirm your account.",
+  confirmationInbox: "Please check your inbox.",
+  signUp: "Sign Up",
+  signIn: "Sign In"
+}
 
 function SignUpForm() {
   const {
     register,
     handleSubmit,
-    formState: { isSubmitted, isValid, errors },
-    setError,
-    clearErrors
-  } = useForm();
+    formState: { isValid, errors },
+    setError  } = useForm();
 
-  const navigate = useNavigate();
 
   const [
     signUpRequest,
@@ -35,7 +43,7 @@ function SignUpForm() {
 
   async function createUser(event) {
     try {
-      const response = await signUpRequest({
+      let response = await signUpRequest({
         user: {
           name: user.name,
           email: user.email,
@@ -44,7 +52,7 @@ function SignUpForm() {
           password_confirmation: user.password_confirmation
         }
       });
-      user = response.data.user
+      response = response.data.user
     } catch (error) {
       setError("serverError", {
         type: "custom",
@@ -58,74 +66,77 @@ function SignUpForm() {
     setUser({ ...user, [name]: value });
   };
 
-  const isFormValid = !isSubmitted || isValid;
 
   if (signUpSuccess) {
     return (
-      <div>
-        <img className="smilies" src={smilies} alt="smilies" />
-        <h1 className="confirmation__first_title">Yey!</h1>
-        <p className="confirmation__subtitle">Only one more step to start enjoying</p>
-        <p className="confirmation__first_title confirmation__second_title">TARGET</p>
-        <p className="confirmation__description">We've sent an email to confirm your account.</p>
-        <p className="confirmation__description">Please check your inbox.</p>
-      </div>
+      <IntlProvider messages={messages} locale="en">
+        <div>
+          <img className="smilies" src={smilies} alt="smilies" />
+          <h1 className="confirmation__first_title"><FormattedMessage id="confirmationFirstTitle" /></h1>
+          <p className="confirmation__subtitle"><FormattedMessage id="confirmationSubtitle" /></p>
+          <p className="confirmation__first_title confirmation__second_title"><FormattedMessage id="confirmationTarget" /></p>
+          <p className="confirmation__description"><FormattedMessage id="confirmationDescription" /></p>
+          <p className="confirmation__description"><FormattedMessage id="confirmationInbox" /></p>
+        </div>
+      </IntlProvider>
     )
   }
   return (
-    <div>
-      <h1 className="left-container__title signup">Sign Up</h1>
-      <form onSubmit={handleSubmit(createUser)}>
-        <Input
-          label="name"
-          type="string"
-          register={register}
-          error={!isValid}
-          onChange={handleChange}
-          name="name"
-        />
-        <Input
-          label="email"
-          type="email"
-          register={register}
-          error={!isValid}
-          onChange={handleChange}
-          name="email"
-        />
-        <Input
-          label="password"
-          type="password"
-          register={register}
-          error={!isValid}
-          onChange={handleChange}
-          name="password"
-          placeholder="min. 6 characters long"
-        />
-        <Input
-          label="confirm password"
-          type="password"
-          register={register}
-          error={!isValid}
-          onChange={handleChange}
-          name="password_confirmation"
-        />
-        <Select
-          label="gender"
-          register={register}
-          error={!isValid}
-          defaultOption="Select your gender"
-          options={['male', 'female', 'other']}
-          onChange={handleChange}
-          name="gender"
-        />
-        <Button label="sign up" />
-        <div className="errorMessage">
-          <ErrorMessage errors={errors} name="serverError" />
-        </div>
-      </form>
-      <hr className="solid" />
-      <Link className="left-container__link" to="/">Sign In</Link>
-    </div>
+    <IntlProvider messages={messages} locale="en">
+       <div>
+        <h1 className="left-container__title signup"><FormattedMessage id="signUp" /></h1>
+        <form onSubmit={handleSubmit(createUser)}>
+          <Input
+            label="name"
+            type="string"
+            register={register}
+            error={!isValid}
+            onChange={handleChange}
+            name="name"
+          />
+          <Input
+            label="email"
+            type="email"
+            register={register}
+            error={!isValid}
+            onChange={handleChange}
+            name="email"
+          />
+          <Input
+            label="password"
+            type="password"
+            register={register}
+            error={!isValid}
+            onChange={handleChange}
+            name="password"
+            placeholder="min. 6 characters long"
+          />
+          <Input
+            label="confirm password"
+            type="password"
+            register={register}
+            error={!isValid}
+            onChange={handleChange}
+            name="password_confirmation"
+          />
+          <Select
+            label="gender"
+            register={register}
+            error={!isValid}
+            defaultOption="Select your gender"
+            options={['male', 'female', 'other']}
+            onChange={handleChange}
+            name="gender"
+          />
+          <Button label="sign up" />
+          <div className="errorMessage">
+            <ErrorMessage errors={errors} name="serverError" />
+          </div>
+        </form>
+        <hr className="solid" />
+        <Link className="left-container__link" to="/"><FormattedMessage id="signIn" /></Link>
+      </div>
+    </IntlProvider>
   )
 }
 
