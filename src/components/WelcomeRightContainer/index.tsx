@@ -1,3 +1,4 @@
+import React from "react";
 import mobilePreview from "@assets/images/i6.png"
 import appstore from "@assets/images/appstore.png"
 import facebook from "@assets/images/Facebook.png"

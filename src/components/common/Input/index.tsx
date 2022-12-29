@@ -1,3 +1,4 @@
+import React from "react";
 import { FC } from "react";
 import { UseFormRegister, FieldValues } from "react-hook-form";
 import classNames from "classnames";
@@ -10,10 +11,18 @@ type InputProps = {
   error: boolean;
   onChange?: () => void;
   name: string;
-  placeholder: string;
+  placeholder?: string;
 };
 
-const Input: FC<InputProps> = ({ label, type, register, error, onChange, name, placeholder }) => (
+const Input: FC<InputProps> = ({
+  label,
+  type,
+  register,
+  error,
+  onChange,
+  name,
+  placeholder = ""
+}) => (
   <div className="inputContainer">
     <label className={`input-label input-label__${name}`}>{label}</label>
     <input type={type} placeholder={placeholder} className={classNames('input-field', {error: error})} {...register(name, { onChange })} />

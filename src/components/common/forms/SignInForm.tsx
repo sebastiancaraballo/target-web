@@ -1,3 +1,4 @@
+import React from "react";
 import { useForm } from "react-hook-form";
 import { ErrorMessage } from "@hookform/error-message";
 import { useDispatch } from "react-redux";
@@ -10,7 +11,7 @@ function SignInForm() {
   const {
     register,
     handleSubmit,
-    formState: { isSubmitted, isValid, errors },
+    formState: { isValid, errors },
     setError,
     clearErrors
   } = useForm();
@@ -48,16 +49,14 @@ function SignInForm() {
           register={register}
           error={!isValid}
           onChange={() => clearErrors()}
-          name="email"
-        />
+          name="email" />
         <Input
           label="password"
           type="password"
           register={register}
           error={!isValid}
           onChange={() => clearErrors()}
-          name="password"
-        />
+          name="password" />
         <Button label="sign in" />
         <div className="errorMessage">
           <ErrorMessage errors={errors} name="serverError" />
