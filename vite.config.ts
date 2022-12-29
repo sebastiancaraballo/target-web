@@ -17,6 +17,7 @@ export default defineConfig({
         new URL("./src/services/", import.meta.url)
       ),
       "@assets/": fileURLToPath(new URL("./src/assets/", import.meta.url)),
+      "@state/": fileURLToPath(new URL("./src/state", import.meta.url))
     },
   },
   plugins: [react()]
